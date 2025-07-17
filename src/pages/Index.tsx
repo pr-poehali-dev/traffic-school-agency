@@ -94,12 +94,12 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {results.map((result, index) => (
-              <Card key={index} className="text-center p-8 border-2 border-gray-100 hover:border-orange-500 transition-all duration-300 hover:shadow-lg">
+              <Card key={index} className="text-center p-8 border-2 border-gray-100 hover:border-orange-500 transition-all duration-300 hover:shadow-lg animate-slide-up hover:scale-105">
                 <CardContent className="p-0">
-                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse-slow">
                     <Icon name={result.icon} size={32} className="text-orange-500" />
                   </div>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">{result.metric}</div>
+                  <div className="text-4xl font-bold text-gray-900 mb-2 animate-bounce-slow">{result.metric}</div>
                   <div className="text-gray-600">{result.label}</div>
                 </CardContent>
               </Card>

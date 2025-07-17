@@ -106,14 +106,37 @@
     animation: fadeIn 1s ease-in-out;
   }
 
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
   .animate-float {
     animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s ease-in-out infinite;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
     }
     to {
       opacity: 1;
@@ -129,34 +152,24 @@
       transform: translateY(-20px);
     }
   }
-}
 
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes float {
+  @keyframes pulse {
     0%, 100% {
-      transform: translateY(0px);
+      transform: scale(1);
+      opacity: 1;
     }
     50% {
-      transform: translateY(-20px);
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
     }
   }
 }
